@@ -1,0 +1,69 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  --font-serif: 'Playfair Display', ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+
+  --color-primary-50: #fdf2f8;
+  --color-primary-100: #fce7f3;
+  --color-primary-200: #fbcfe8;
+  --color-primary-300: #f9a8d4;
+  --color-primary-400: #f472b6;
+  --color-primary-500: #ec4899;
+  --color-primary-600: #db2777;
+  --color-primary-700: #be185d;
+  --color-primary-800: #9d174d;
+  --color-primary-900: #831843;
+  --color-primary-950: #4a0d26;
+
+  /* Redefining gray to a romantic plum/mauve to avoid the "plomo" look */
+  --color-gray-50: #faf6f8;
+  --color-gray-100: #f4eaef;
+  --color-gray-200: #e8d5e0;
+  --color-gray-300: #d8b9cc;
+  --color-gray-400: #c295b0;
+  --color-gray-500: #a77090;
+  --color-gray-600: #8c5273;
+  --color-gray-700: #74405c;
+  --color-gray-800: #60364e;
+  --color-gray-900: #351a26;
+  --color-gray-950: #1a0b12;
+
+  --animate-typewriter: typewriter 2s steps(40, end);
+  --animate-fade-in: fadeIn 1.5s ease-out forwards;
+  --animate-float: float 3s ease-in-out infinite;
+
+  @keyframes typewriter {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+  }
+}
+
+@layer base {
+  body {
+    @apply antialiased text-gray-800 bg-gray-50;
+  }
+}
+
+/* Glassmorphism utilities */
+.glass-effect {
+  @apply bg-white/70 backdrop-blur-md border border-white/20 shadow-xl;
+}
+
+/* Custom fade in delays */
+.fade-in-delay-1 { animation: fadeIn 1s ease-out 0.3s forwards; opacity: 0; }
+.fade-in-delay-2 { animation: fadeIn 1s ease-out 0.6s forwards; opacity: 0; }
+.fade-in-delay-3 { animation: fadeIn 1s ease-out 0.9s forwards; opacity: 0; }
+.fade-in-delay-4 { animation: fadeIn 1s ease-out 1.2s forwards; opacity: 0; }
