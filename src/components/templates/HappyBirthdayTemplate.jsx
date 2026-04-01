@@ -18,7 +18,7 @@ export default function HappyBirthdayTemplate({ to_name, from_name, message }) {
         <Gift size={56} />
       </div>
 
-      <div className="glass-effect dark:bg-gray-900/50 max-w-2xl w-full rounded-3xl p-8 sm:p-12 relative z-10 animate-fade-in mx-auto shadow-2xl border border-white/40 dark:border-gray-800">
+      <div className="bg-white/90 dark:bg-orange-950/20 backdrop-blur-3xl max-w-2xl w-full rounded-3xl p-8 sm:p-12 relative z-10 animate-fade-in mx-auto shadow-2xl border border-white/40 dark:border-orange-500/20">
         
         {/* Top Decoration */}
         <div className="flex justify-center mb-8 fade-in-delay-1">
@@ -39,13 +39,13 @@ export default function HappyBirthdayTemplate({ to_name, from_name, message }) {
             <div className="absolute left-0 bottom-0 w-8 h-8 border-b-4 border-l-4 border-yellow-300 dark:border-yellow-700 rounded-bl-2xl"></div>
             <div className="absolute right-0 bottom-0 w-8 h-8 border-b-4 border-r-4 border-yellow-300 dark:border-yellow-700 rounded-br-2xl"></div>
             
-            <p className="text-lg sm:text-xl text-gray-700 dark:text-gray-200 leading-relaxed whitespace-pre-wrap fade-in-delay-3 px-4 font-medium">
+            <p className="text-lg sm:text-xl text-gray-700 dark:text-white leading-relaxed whitespace-pre-wrap fade-in-delay-3 px-4 font-medium">
               {message}
             </p>
           </div>
 
           <div className="mt-10 fade-in-delay-4">
-            <p className="text-gray-500 dark:text-gray-400 text-sm mb-2 uppercase tracking-widest font-semibold">Con mucho cariño,</p>
+            <p className="text-orange-600/60 dark:text-orange-300/60 text-sm mb-2 uppercase tracking-widest font-semibold">Con mucho cariño,</p>
             <p className="text-2xl font-bold text-orange-600 dark:text-orange-400">
               {from_name}
             </p>

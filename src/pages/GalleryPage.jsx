@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Heart, Sparkles, Send, Cake } from 'lucide-react';
+import { Heart, Sparkles, Send, Cake, Mail, Gift } from 'lucide-react';
 
 // Hardcoded template list (for now, just one, but prepared for more)
 const TEMPLATES = [
@@ -16,6 +16,20 @@ const TEMPLATES = [
     description: 'Un diseño alegre y festivo con globos, regalos y animaciones divertidas para celebrar su día especial.',
     icon: Cake,
     color: 'from-orange-400 to-yellow-500'
+  },
+  {
+    id: 'interactive_envelope',
+    name: 'Sobre Interactivo',
+    description: 'Un sobre elegante que esconde tu mensaje y se abre con una lluvia de corazones al tocarlo.',
+    icon: Mail,
+    color: 'from-primary-600 to-rose-400'
+  },
+  {
+    id: 'proposal',
+    name: 'Propuesta Directa',
+    description: 'Haz la gran pregunta con estilo. Incluye un botón que huye y una celebración inolvidable.',
+    icon: Gift,
+    color: 'from-primary-700 to-purple-600'
   }
 ];
 

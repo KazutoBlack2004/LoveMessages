@@ -28,7 +28,8 @@ export default function CreateMessageForm({ initialTemplate = 'love_letter' }) {
     try {
       const slug = generateSlug();
       const expires_at = new Date();
-      expires_at.setDate(expires_at.getDate() + 30);
+      // Expiración en 7 días (1 semana)
+      expires_at.setDate(expires_at.getDate() + 7);
 
       const { error } = await supabase
         .from('messages')
@@ -130,44 +131,37 @@ export default function CreateMessageForm({ initialTemplate = 'love_letter' }) {
           />
         </div>
 
-        <div>
-          <label htmlFor="from_name" className={labelClass}>De (Tu Nombre)</label>
-          <input
-            id="from_name"
-            type="text"
-            required
-            className={inputClass}
-            placeholder="Ej. Tu admirador secreto"
-            value={formData.from_name}
-            onChange={(e) => setFormData({...formData, from_name: e.target.value})}
-          />
-        </div>
+        {formData.template !== 'proposal' && (
+          <>
+            <div>
+              <label htmlFor="from_name" className={labelClass}>De (Tu Nombre)</label>
+              <input
+                id="from_name"
+                type="text"
+                required
+                className={inputClass}
+                placeholder="Ej. Tu admirador secreto"
+                value={formData.from_name}
+                onChange={(e) => setFormData({...formData, from_name: e.target.value})}
+              />
+            </div>
 
-        <div>
-          <label htmlFor="message" className={labelClass}>Tu Mensaje</label>
-          <textarea
-            id="message"
-            required
-            rows="4"
-            className={`${inputClass} resize-none`}
-            placeholder="Escribe palabras desde el fondo de tu corazón..."
-            value={formData.message}
-            onChange={(e) => setFormData({...formData, message: e.target.value})}
-          ></textarea>
-        </div>
+            <div>
+              <label htmlFor="message" className={labelClass}>Tu Mensaje</label>
+              <textarea
+                id="message"
+                required
+                rows="4"
+                className={`${inputClass} resize-none`}
+                placeholder="Escribe palabras desde el fondo de tu corazón..."
+                value={formData.message}
+                onChange={(e) => setFormData({...formData, message: e.target.value})}
+              ></textarea>
+            </div>
+          </>
+        )}
 
-        <div>
-          <label htmlFor="template" className={labelClass}>Diseño</label>
-          <select
-            id="template"
-            className={inputClass}
-            value={formData.template}
-            onChange={(e) => setFormData({...formData, template: e.target.value})}
-          >
-            <option value="love_letter">Carta de Amor Clásica</option>
-            <option value="happy_birthday">Feliz Cumpleaños</option>
-          </select>
-        </div>
+        {/* Template selector removed as requested (redundant) */}
 
         <button
           type="submit"

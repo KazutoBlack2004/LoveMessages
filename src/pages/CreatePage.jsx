@@ -7,7 +7,9 @@ export default function CreatePage() {
   // Mapping readable names for the header
   const templateNames = {
     'love_letter': 'Carta de Amor Clásica',
-    'happy_birthday': 'Feliz Cumpleaños'
+    'happy_birthday': 'Feliz Cumpleaños',
+    'interactive_envelope': 'Sobre Interactivo',
+    'proposal': 'Propuesta Directa'
   };
 
   const selectedTemplateName = templateNames[templateId] || 'Diseño Personalizado';

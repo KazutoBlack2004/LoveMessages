@@ -4,11 +4,15 @@ import { supabase } from '../lib/supabaseClient';
 import { Loader2, HeartCrack, ArrowLeft } from 'lucide-react';
 import LoveLetterTemplate from '../components/templates/LoveLetterTemplate';
 import HappyBirthdayTemplate from '../components/templates/HappyBirthdayTemplate';
+import EnvelopeTemplate from '../components/templates/EnvelopeTemplate';
+import ProposalTemplate from '../components/templates/ProposalTemplate';
 
 // Component Map - making it easy to add new templates in the future
 const TEMPLATES = {
   'love_letter': LoveLetterTemplate,
   'happy_birthday': HappyBirthdayTemplate,
+  'interactive_envelope': EnvelopeTemplate,
+  'proposal': ProposalTemplate,
 };
 
 export default function MessagePage() {

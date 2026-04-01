@@ -18,7 +18,7 @@ export default function LoveLetterTemplate({ to_name, from_name, message }) {
         <Heart size={64} fill="currentColor" />
       </div>
 
-      <div className="glass-effect dark:bg-gray-900/50 max-w-2xl w-full rounded-3xl p-8 sm:p-12 relative z-10 animate-fade-in mx-auto shadow-2xl border border-white/40 dark:border-gray-800">
+      <div className="bg-white/90 dark:bg-primary-950/40 backdrop-blur-3xl max-w-2xl w-full rounded-3xl p-8 sm:p-12 relative z-10 animate-fade-in mx-auto shadow-2xl border border-white/40 dark:border-primary-500/20">
         
         {/* Top Decoration */}
         <div className="flex justify-center mb-8 fade-in-delay-1">
@@ -39,13 +39,13 @@ export default function LoveLetterTemplate({ to_name, from_name, message }) {
             <div className="absolute left-0 bottom-0 w-8 h-8 border-b-2 border-l-2 border-primary-300 dark:border-primary-700 rounded-bl-xl"></div>
             <div className="absolute right-0 bottom-0 w-8 h-8 border-b-2 border-r-2 border-primary-300 dark:border-primary-700 rounded-br-xl"></div>
             
-            <p className="text-lg sm:text-xl text-gray-700 dark:text-gray-200 leading-relaxed whitespace-pre-wrap fade-in-delay-3 px-4">
+            <p className="text-lg sm:text-xl text-gray-700 dark:text-white leading-relaxed whitespace-pre-wrap fade-in-delay-3 px-4">
               {message}
             </p>
           </div>
 
           <div className="mt-10 fade-in-delay-4">
-            <p className="text-gray-500 dark:text-gray-400 text-sm mb-2 uppercase tracking-widest">Tuyo/a siempre,</p>
+            <p className="text-primary-600/60 dark:text-primary-300/60 text-sm mb-2 uppercase tracking-widest font-medium">Tuyo/a siempre,</p>
             <p className="text-2xl font-bold text-primary-600 dark:text-primary-400 italic">
               {from_name}
             </p>

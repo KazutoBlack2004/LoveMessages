@@ -69,7 +69,7 @@ export default function Home() {
                 <Lock size={32} />
               </div>
               <h3 className="text-xl font-bold text-primary-900 dark:text-white mb-3">3. Comparte el enlace</h3>
-              <p className="text-primary-700/70 dark:text-primary-300/70">Obtén un enlace único y privado para enviar. El mensaje se auto-destruirá después de 30 días.</p>
+              <p className="text-primary-700/70 dark:text-primary-300/70">Obtén un enlace único y privado para enviar. El mensaje se auto-destruirá después de 7 días.</p>
             </div>
           </div>
         </div>
