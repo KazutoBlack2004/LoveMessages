@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Heart, Sparkles, Send, MailOpen, Lock } from 'lucide-react';
+import { Heart, Sparkles, Send, Lock } from 'lucide-react';
 
 export default function Home() {
   return (

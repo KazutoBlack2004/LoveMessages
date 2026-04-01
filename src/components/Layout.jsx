@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, Outlet } from 'react-router-dom';
-import { Heart, Moon, Sun } from 'lucide-react';
+import { Heart } from 'lucide-react';
 
 export default function Layout() {
   const [darkMode, setDarkMode] = useState(() => {

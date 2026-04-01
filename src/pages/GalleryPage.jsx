@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Heart, Sparkles, Send, Cake, Mail, Gift } from 'lucide-react';
+import { Heart, Send, Cake, Mail, Gift } from 'lucide-react';
 
 // Hardcoded template list (for now, just one, but prepared for more)
 const TEMPLATES = [
