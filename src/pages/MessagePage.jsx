@@ -6,6 +6,7 @@ import LoveLetterTemplate from '../components/templates/LoveLetterTemplate';
 import HappyBirthdayTemplate from '../components/templates/HappyBirthdayTemplate';
 import EnvelopeTemplate from '../components/templates/EnvelopeTemplate';
 import ProposalTemplate from '../components/templates/ProposalTemplate';
+import SakuraTemplate from '../components/templates/SakuraTemplate';
 
 // Component Map - making it easy to add new templates in the future
 const TEMPLATES = {
@@ -13,6 +14,7 @@ const TEMPLATES = {
   'happy_birthday': HappyBirthdayTemplate,
   'interactive_envelope': EnvelopeTemplate,
   'proposal': ProposalTemplate,
+  'sakura': SakuraTemplate,
 };
 
 export default function MessagePage() {

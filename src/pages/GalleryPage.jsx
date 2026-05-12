@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Heart, Send, Cake, Mail, Gift } from 'lucide-react';
+import { Heart, Send, Cake, Mail, Gift, Flower2 } from 'lucide-react';
 
 // Hardcoded template list (for now, just one, but prepared for more)
 const TEMPLATES = [
@@ -30,6 +30,13 @@ const TEMPLATES = [
     description: 'Haz la gran pregunta con estilo. Incluye un botón que huye y una celebración inolvidable.',
     icon: Gift,
     color: 'from-primary-700 to-purple-600'
+  },
+  {
+    id: 'sakura',
+    name: 'Jardín Sakura',
+    description: 'Una experiencia poética y japonesa con pétalos cayendo y un pergamino elegante.',
+    icon: Flower2,
+    color: 'from-pink-400 to-rose-300'
   }
 ];
 
