@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Heart, Send, Cake, Mail, Gift, Flower2 } from 'lucide-react';
+import { Heart, Send, Cake, Mail, Gift, Flower2, Zap } from 'lucide-react';
 
 // Hardcoded template list (for now, just one, but prepared for more)
 const TEMPLATES = [
@@ -37,6 +37,13 @@ const TEMPLATES = [
     description: 'Una experiencia poética y japonesa con pétalos cayendo y un pergamino elegante.',
     icon: Flower2,
     color: 'from-pink-400 to-rose-300'
+  },
+  {
+    id: 'dragonball',
+    name: 'Amor Saiyajin',
+    description: '¡Demuestra tu amor nivel Super Saiyajin! Con Goku de fondo cantando "Mi corazón encantado" y las 7 esferas del amor.',
+    icon: Zap,
+    color: 'from-orange-500 to-yellow-500 font-bold'
   }
 ];
 
