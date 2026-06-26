@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Heart, Send, Cake, Mail, Gift, Flower2, Zap } from 'lucide-react';
+import { Heart, Send, Cake, Mail, Gift, Flower2, Zap, Bird } from 'lucide-react';
 
 // Hardcoded template list (for now, just one, but prepared for more)
 const TEMPLATES = [
@@ -44,6 +44,13 @@ const TEMPLATES = [
     description: '¡Demuestra tu amor nivel Super Saiyajin! Con Goku de fondo cantando "Mi corazón encantado" y las 7 esferas del amor.',
     icon: Zap,
     color: 'from-orange-500 to-yellow-500 font-bold'
+  },
+  {
+    id: 'chicago_pajaro_meme',
+    name: 'Chicago Meme',
+    description: 'Meme de Chicago de Michael Jacson',
+    icon: Bird,
+    color: 'from-neutral-600 to-neutral-800 font-bold'
   }
 ];
 
@@ -63,8 +70,8 @@ export default function GalleryPage() {
         {TEMPLATES.map((template, index) => {
           const Icon = template.icon;
           return (
-            <div 
-              key={template.id} 
+            <div
+              key={template.id}
               className="bg-white/70 dark:bg-primary-950/60 backdrop-blur-md border border-primary-100/50 dark:border-primary-900/40 shadow-lg shadow-primary-100/30 dark:shadow-primary-900/20 rounded-3xl overflow-hidden hover:shadow-2xl hover:shadow-primary-500/20 hover:-translate-y-1 transition-all duration-300 group animate-fade-in"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
@@ -82,8 +89,8 @@ export default function GalleryPage() {
                 <p className="text-gray-600 dark:text-gray-400 mb-8 min-h-12">
                   {template.description}
                 </p>
-                
-                <Link 
+
+                <Link
                   to={`/crear/${template.id}`}
                   className="w-full py-3 bg-primary-500 hover:bg-primary-600 text-white rounded-xl font-bold transition-colors flex items-center justify-center gap-2 shadow-md shadow-primary-400/30"
                 >

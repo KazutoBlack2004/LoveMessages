@@ -8,6 +8,7 @@ import EnvelopeTemplate from '../components/templates/EnvelopeTemplate';
 import ProposalTemplate from '../components/templates/ProposalTemplate';
 import SakuraTemplate from '../components/templates/SakuraTemplate';
 import DragonBallTemplate from '../components/templates/DragonBallTemplate';
+import ChicagoPajaroMeme from '../components/templates/ChicagoPajaroMeme';
 
 // Component Map - making it easy to add new templates in the future
 const TEMPLATES = {
@@ -17,6 +18,7 @@ const TEMPLATES = {
   'proposal': ProposalTemplate,
   'sakura': SakuraTemplate,
   'dragonball': DragonBallTemplate,
+  'chicago_pajaro_meme': ChicagoPajaroMeme,
 };
 
 export default function MessagePage() {
@@ -35,14 +37,14 @@ export default function MessagePage() {
           .single();
 
         if (error) throw error;
-        
+
         // Check if message is expired
         if (new Date(data.expires_at) < new Date()) {
           throw new Error('This message has expired.');
         }
 
         setMessageData(data);
-        
+
         // Optional: Attempt to update open status, no await needed.
         // This might fail if RLS doesn't allow updates, but that's fine.
         supabase
@@ -50,8 +52,8 @@ export default function MessagePage() {
           .update({ is_opened: true, opened_at: new Date().toISOString() })
           .eq('slug', slug)
           .then()
-          .catch(() => {});
-          
+          .catch(() => { });
+
       } catch (err) {
         console.error('Error fetching message:', err);
         setError('Message not found or expired.');
