@@ -1,8 +1,13 @@
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export default function ChicagoPajaroExperience({ message, from_name, to_name }) {
     const videoId = "bp4_7T9J6Fg";
-    const embedUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=0&controls=0&rel=0&modestbranding=1`;
+    // Estado para controlar el silencio (1 = mutado por defecto para asegurar autoplay)
+    const [isMuted, setIsMuted] = useState(true);
+
+    // La URL cambia dinámicamente según el estado de isMuted
+    const embedUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=${isMuted ? 1 : 0}&controls=0&rel=0&modestbranding=1`;
 
     return (
         <div
@@ -23,21 +28,27 @@ export default function ChicagoPajaroExperience({ message, from_name, to_name })
                             transition={{ duration: 0.5 }}
                             className="w-full flex flex-col items-center gap-6"
                         >
-                            {/* 16:9 Player Container */}
                             <div
-                                className="relative w-full rounded-2xl overflow-hidden border border-[#ffe8a1]/30 shadow-2xl bg-black"
+                                onClick={() => setIsMuted(false)} // Al tocar el video, se activa el sonido
+                                className="relative w-full rounded-2xl overflow-hidden border border-[#ffe8a1]/30 shadow-2xl bg-black cursor-pointer"
                                 style={{
                                     aspectRatio: "16 / 9",
                                     height: "auto"
                                 }}
                             >
                                 <iframe
-                                    className="absolute inset-0 w-full h-full"
+                                    className="absolute inset-0 w-full h-full pointer-events-none" // pointer-events-none para que el clic lo reciba tu div y no YouTube
                                     src={embedUrl}
                                     title="Chicago song"
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                    allowFullScreen
                                 ></iframe>
+
+                                {/* En vez de un botón molesto, solo una pequeña sugerencia visual en una esquina o abajo */}
+                                {isMuted && (
+                                    <div className="absolute bottom-4 right-4 bg-black/70 text-white text-xs px-3 py-1.5 rounded-full animate-pulse pointer-events-none">
+                                        🔈 Haz clic para activar sonido
+                                    </div>
+                                )}
                             </div>
 
                             {/* Info Box Uniforme */}
@@ -71,9 +82,7 @@ export default function ChicagoPajaroExperience({ message, from_name, to_name })
                                     <p className="text-stone-50 text-base sm:text-lg font-serif italic leading-relaxed text-center relative z-10 drop-shadow-sm break-words">
                                         {message}
                                     </p>
-                                    <p className="text-[10px] text-stone-300/60 text-center mt-3 font-mono">
-                                        * Si el baile no funciona, se procederá a hacer el Moonwalk *
-                                    </p>
+
                                 </div>
                             )}
                         </motion.div>
