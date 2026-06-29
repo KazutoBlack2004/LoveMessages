@@ -1,4 +1,5 @@
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
+import { Eye } from 'lucide-react';
 import CreateMessageForm from '../components/CreateMessageForm';
 
 export default function CreatePage() {
@@ -9,7 +10,10 @@ export default function CreatePage() {
     'love_letter': 'Carta de Amor Clásica',
     'happy_birthday': 'Feliz Cumpleaños',
     'interactive_envelope': 'Sobre Interactivo',
-    'proposal': 'Propuesta Directa'
+    'proposal': 'Propuesta Directa',
+    'sakura': 'Jardín Sakura',
+    'dragonball': 'Amor Saiyajin',
+    'chicago_pajaro_meme': 'Chicago Meme'
   };
 
   const selectedTemplateName = templateNames[templateId] || 'Diseño Personalizado';
@@ -21,9 +25,18 @@ export default function CreatePage() {
         <h1 className="text-3xl md:text-4xl font-serif font-bold text-gray-900 dark:text-white mb-3">
           Redacta tu carta
         </h1>
-        <p className="text-gray-600 dark:text-gray-400">
+        <p className="text-gray-600 dark:text-gray-400 mb-4">
           Diseño seleccionado: <span className="font-semibold text-primary-600 dark:text-primary-400">{selectedTemplateName}</span>
         </p>
+        <Link
+          to={`/preview/${templateId}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center justify-center gap-2 px-4 py-2 bg-primary-50 dark:bg-primary-900/40 text-primary-600 dark:text-primary-400 hover:bg-primary-100 dark:hover:bg-primary-800/60 rounded-full font-medium transition-colors text-sm border border-primary-200 dark:border-primary-800"
+        >
+          <Eye size={16} />
+          Ver vista previa del diseño
+        </Link>
       </div>
 
       <div className="w-full max-w-md animate-[fadeIn_1.5s_ease-out_0.2s_forwards] opacity-0">

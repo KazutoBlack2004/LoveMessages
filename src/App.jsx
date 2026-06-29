@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import MessagePage from './pages/MessagePage';
 import GalleryPage from './pages/GalleryPage';
 import CreatePage from './pages/CreatePage';
+import PreviewPage from './pages/PreviewPage';
 import { Toaster } from 'react-hot-toast';
 
 function App() {
@@ -20,6 +21,9 @@ function App() {
 
         {/* Message viewer is standalone, no navbar */}
         <Route path="/m/:slug" element={<MessagePage />} />
+        
+        {/* Preview viewer is also standalone */}
+        <Route path="/preview/:templateId" element={<PreviewPage />} />
       </Routes>
     </Router>
   );

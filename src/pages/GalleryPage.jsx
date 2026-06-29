@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Heart, Send, Cake, Mail, Gift, Flower2, Zap, Bird } from 'lucide-react';
+import { Heart, Send, Cake, Mail, Gift, Flower2, Zap, Bird, Eye } from 'lucide-react';
 
 // Hardcoded template list (for now, just one, but prepared for more)
 const TEMPLATES = [
@@ -90,13 +90,22 @@ export default function GalleryPage() {
                   {template.description}
                 </p>
 
-                <Link
-                  to={`/crear/${template.id}`}
-                  className="w-full py-3 bg-primary-500 hover:bg-primary-600 text-white rounded-xl font-bold transition-colors flex items-center justify-center gap-2 shadow-md shadow-primary-400/30"
-                >
-                  <Send size={18} />
-                  Usar este diseño
-                </Link>
+                <div className="flex flex-col gap-3">
+                  <Link
+                    to={`/preview/${template.id}`}
+                    className="w-full py-3 bg-white dark:bg-primary-950 border-2 border-primary-500 text-primary-600 dark:text-primary-400 hover:bg-primary-50 dark:hover:bg-primary-900/50 rounded-xl font-bold transition-colors flex items-center justify-center gap-2 shadow-sm"
+                  >
+                    <Eye size={18} />
+                    Vista Previa
+                  </Link>
+                  <Link
+                    to={`/crear/${template.id}`}
+                    className="w-full py-3 bg-primary-500 hover:bg-primary-600 text-white rounded-xl font-bold transition-colors flex items-center justify-center gap-2 shadow-md shadow-primary-400/30"
+                  >
+                    <Send size={18} />
+                    Usar este diseño
+                  </Link>
+                </div>
               </div>
             </div>
           );
