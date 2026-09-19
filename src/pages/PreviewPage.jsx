@@ -7,6 +7,7 @@ import ProposalTemplate from '../components/templates/ProposalTemplate';
 import SakuraTemplate from '../components/templates/SakuraTemplate';
 import DragonBallTemplate from '../components/templates/DragonBallTemplate';
 import ChicagoPajaroMeme from '../components/templates/ChicagoPajaroMeme';
+import ConstellationTemplate from '../components/templates/ConstellationTemplate';
 
 const TEMPLATES = {
   'love_letter': LoveLetterTemplate,
@@ -16,6 +17,7 @@ const TEMPLATES = {
   'sakura': SakuraTemplate,
   'dragonball': DragonBallTemplate,
   'chicago_pajaro_meme': ChicagoPajaroMeme,
+  'constellation': ConstellationTemplate,
 };
 
 const DEFAULT_MESSAGES = {
@@ -59,6 +61,12 @@ const DEFAULT_MESSAGES = {
     from_name: 'Meme Lover',
     to_name: 'Mi Pajarito',
     message: 'Pío pío, esto es una vista previa del meme para que veas cómo se ríe esa persona especial.',
+    music_url: ''
+  },
+  'constellation': {
+    from_name: 'Tu Astrónomo de Amor',
+    to_name: 'Estrella de mi Vida',
+    message: 'Entre millones de galaxias y constelaciones en el universo, mi universo entero gravita alrededor de ti. Te amo infinitamente.',
     music_url: ''
   }
 };

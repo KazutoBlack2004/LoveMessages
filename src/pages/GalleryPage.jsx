@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Heart, Send, Cake, Mail, Gift, Flower2, Zap, Bird, Eye } from 'lucide-react';
+import { Heart, Send, Cake, Mail, Gift, Flower2, Zap, Bird, Eye, Sparkles } from 'lucide-react';
 
 // Hardcoded template list (for now, just one, but prepared for more)
 const TEMPLATES = [
@@ -51,6 +51,13 @@ const TEMPLATES = [
     description: 'Meme de Chicago de Michael Jacson',
     icon: Bird,
     color: 'from-neutral-600 to-neutral-800 font-bold'
+  },
+  {
+    id: 'constellation',
+    name: 'Constelación del Amor',
+    description: 'Una noche de estrellas celestiales donde debes conectar los puntos brillantes para revelar tu carta secreta.',
+    icon: Sparkles,
+    color: 'from-indigo-900 via-slate-900 to-purple-950 font-bold'
   }
 ];
 
