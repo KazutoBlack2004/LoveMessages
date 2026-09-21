@@ -50,11 +50,14 @@
   bottom: 0;
   transform-origin: bottom center;
   pointer-events: auto;
+  will-change: transform, opacity;
+  backface-visibility: hidden;
 }
 
 .flowers {
   position: relative;
   transform: scale(0.9);
+  will-change: transform;
 }
 
 .flower {
@@ -63,6 +66,8 @@
   transform-origin: bottom center;
   z-index: 10;
   --fl-speed: 0.8s;
+  will-change: transform;
+  backface-visibility: hidden;
 }
 
 .flower--1 {

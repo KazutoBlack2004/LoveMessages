@@ -4,11 +4,11 @@ import { Heart, Sparkles, X, Sun, Copy, Check, Flower2 } from 'lucide-react';
 import './CssFlowers.css';
 
 const FLOWER_INSTANCES = [
-  { id: 1, left: '-5%',  scale: 0.75 },
-  { id: 2, left: '20%',  scale: 0.85 },
-  { id: 3, left: '50%',  scale: 1.00 },
-  { id: 4, left: '75%',  scale: 0.85 },
-  { id: 5, left: '100%', scale: 0.75 },
+  { id: 1, left: '-5%',  scale: 0.75, delay: 0.1 },
+  { id: 2, left: '20%',  scale: 0.85, delay: 0.3 },
+  { id: 3, left: '50%',  scale: 1.00, delay: 0.5 },
+  { id: 4, left: '75%',  scale: 0.85, delay: 0.7 },
+  { id: 5, left: '100%', scale: 0.75, delay: 0.9 },
 ];
 
 function SingleFlowerCluster() {
@@ -366,16 +366,18 @@ export default function AnimatedCssFlowersExperience({ message, sender, to_name 
       {/* 5 Replicated Flower Clusters across the Garden Horizon */}
       <div className="flowers-garden-container">
         {FLOWER_INSTANCES.map((inst) => (
-          <div
+          <motion.div
             key={inst.id}
+            initial={{ opacity: 0, y: 40, scale: inst.scale * 0.8 }}
+            animate={{ opacity: 1, y: 0, scale: inst.scale }}
+            transition={{ delay: inst.delay, duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
             className="flower-group-instance"
             style={{
               left: inst.left,
-              transform: `scale(${inst.scale})`,
             }}
           >
             <SingleFlowerCluster />
-          </div>
+          </motion.div>
         ))}
       </div>
 
@@ -438,15 +440,6 @@ export default function AnimatedCssFlowersExperience({ message, sender, to_name 
                 </div>
               </div>
 
-              {/* Vintage Rubber Postmark Stamp (Top Right) */}
-              <div className="absolute top-6 right-14 rotate-12 pointer-events-none opacity-40 hidden sm:flex flex-col items-center justify-center w-24 h-24 rounded-full border-2 border-dashed border-amber-900 p-1 text-center">
-                <div className="w-full h-full rounded-full border border-amber-900/50 flex flex-col items-center justify-center p-1">
-                  <Flower2 size={16} className="text-amber-900" />
-                  <span className="text-[9px] font-bold uppercase tracking-wider text-amber-950 mt-0.5">Flores Amarillas</span>
-                  <span className="text-[8px] font-serif text-amber-900">2026</span>
-                </div>
-              </div>
-
               {/* Close Button */}
               <button
                 onClick={() => setShowLetter(false)}
@@ -456,11 +449,8 @@ export default function AnimatedCssFlowersExperience({ message, sender, to_name 
                 <X size={18} />
               </button>
 
-              {/* Header / Subtitle */}
+              {/* Header / Recipient */}
               <div className="pt-6 mb-4 text-center sm:text-left">
-                <span className="text-amber-700 font-serif italic text-sm sm:text-base uppercase tracking-widest block mb-1">
-                  Carta de Flores Amarillas
-                </span>
                 <h3 className="text-3xl sm:text-5xl font-cursive font-bold text-amber-950 tracking-tight leading-tight">
                   Para: {to_name || 'Mi Persona Especial'}
                 </h3>
