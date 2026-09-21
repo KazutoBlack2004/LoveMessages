@@ -1,8 +1,15 @@
 import { Link } from 'react-router-dom';
-import { Heart, Send, Cake, Mail, Gift, Flower2, Zap, Bird, Eye, Sparkles } from 'lucide-react';
+import { Heart, Send, Cake, Mail, Gift, Flower2, Zap, Bird, Eye, Sparkles, Sun } from 'lucide-react';
 
 // Hardcoded template list (for now, just one, but prepared for more)
 const TEMPLATES = [
+  {
+    id: 'yellow_flowers',
+    name: 'Flores Amarillas',
+    description: 'Especial 21 de Septiembre: Hermosas flores amarillas en 3D que crecen y florecen en tiempo real sobre un cielo nocturno.',
+    icon: Sun,
+    color: 'from-amber-400 via-yellow-500 to-amber-600'
+  },
   {
     id: 'love_letter',
     name: 'Carta de Amor Clásica',

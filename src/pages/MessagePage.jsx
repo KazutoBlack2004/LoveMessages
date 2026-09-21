@@ -10,6 +10,7 @@ import SakuraTemplate from '../components/templates/SakuraTemplate';
 import DragonBallTemplate from '../components/templates/DragonBallTemplate';
 import ChicagoPajaroMeme from '../components/templates/ChicagoPajaroMeme';
 import ConstellationTemplate from '../components/templates/ConstellationTemplate';
+import AnimatedCssFlowersTemplate from '../components/templates/AnimatedCssFlowersTemplate';
 
 // Component Map - making it easy to add new templates in the future
 const TEMPLATES = {
@@ -21,6 +22,7 @@ const TEMPLATES = {
   'dragonball': DragonBallTemplate,
   'chicago_pajaro_meme': ChicagoPajaroMeme,
   'constellation': ConstellationTemplate,
+  'yellow_flowers': AnimatedCssFlowersTemplate,
 };
 
 export default function MessagePage() {

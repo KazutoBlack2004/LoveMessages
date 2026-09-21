@@ -8,6 +8,7 @@ import SakuraTemplate from '../components/templates/SakuraTemplate';
 import DragonBallTemplate from '../components/templates/DragonBallTemplate';
 import ChicagoPajaroMeme from '../components/templates/ChicagoPajaroMeme';
 import ConstellationTemplate from '../components/templates/ConstellationTemplate';
+import AnimatedCssFlowersTemplate from '../components/templates/AnimatedCssFlowersTemplate';
 
 const TEMPLATES = {
   'love_letter': LoveLetterTemplate,
@@ -18,6 +19,7 @@ const TEMPLATES = {
   'dragonball': DragonBallTemplate,
   'chicago_pajaro_meme': ChicagoPajaroMeme,
   'constellation': ConstellationTemplate,
+  'yellow_flowers': AnimatedCssFlowersTemplate,
 };
 
 const DEFAULT_MESSAGES = {
@@ -68,6 +70,12 @@ const DEFAULT_MESSAGES = {
     to_name: 'Estrella de mi Vida',
     message: 'Entre millones de galaxias y constelaciones en el universo, mi universo entero gravita alrededor de ti. Te amo infinitamente.',
     music_url: ''
+  },
+  'yellow_flowers': {
+    from_name: 'Tu Admirador/a Especial',
+    to_name: 'Mi Flor Amarilla',
+    message: 'En este 21 de septiembre, quise regalarte estas flores amarillas brillantes para recordarte lo especial que eres para mí.',
+    music_url: ''
   }
 };
 
@@ -94,7 +102,7 @@ export default function PreviewPage() {
         Vista Previa
       </div>
 
-      <div className="w-full h-full min-h-screen">
+      <div className="w-full min-h-screen">
         <TemplateComponent {...mockData} />
       </div>
     </div>

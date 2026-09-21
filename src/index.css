@@ -57,6 +57,24 @@
   }
 }
 
+.font-cursive {
+  font-family: 'Dancing Script', cursive;
+}
+.font-script {
+  font-family: 'Great Vibes', cursive;
+}
+.font-serif-luxury {
+  font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+}
+
+/* Luxury Parchment Paper Effect */
+.parchment-paper {
+  background-color: #fffdf5;
+  background-image: 
+    radial-gradient(circle at 50% 50%, rgba(254, 240, 138, 0.25) 0%, rgba(251, 191, 36, 0.08) 100%),
+    repeating-linear-gradient(transparent, transparent 31px, rgba(217, 119, 6, 0.08) 31px, rgba(217, 119, 6, 0.08) 32px);
+}
+
 /* Glassmorphism utilities */
 .glass-effect {
   @apply bg-white/70 backdrop-blur-md border border-white/20 shadow-xl;

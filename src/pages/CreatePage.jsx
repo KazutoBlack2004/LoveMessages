@@ -7,6 +7,7 @@ export default function CreatePage() {
 
   // Mapping readable names for the header
   const templateNames = {
+    'yellow_flowers': 'Flores Amarillas Animadas',
     'love_letter': 'Carta de Amor Clásica',
     'happy_birthday': 'Feliz Cumpleaños',
     'interactive_envelope': 'Sobre Interactivo',
